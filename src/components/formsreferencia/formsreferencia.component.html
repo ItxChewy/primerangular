@@ -1,0 +1,11 @@
+<div>
+    <h1>Form Referencia</h1>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <label>Numero 1: </label>
+        <input type="number" name="cajanumero1" #cajanumero1><br>
+        <label>Numero 2: </label>
+        <input type="number" name="cajanumero2" #cajanumero2><br>
+        <button>Mostrar Suma</button>
+    </form>
+    <h3 *ngIf="suma != 0">{{suma}}</h3>
+</div>

@@ -4,14 +4,17 @@
     <form #userForm="ngForm" (ngSubmit)="recibirDatos()">
         <label>Nombre: </label>
         <input type="text" name="cajanombre"
-         #cajanombre="ngModel" [(ngModel)]="user.nombre"/><br/><br>
+         #cajanombre="ngModel" [(ngModel)]="user.nombre" required/>
+         <span style="color: red;" *ngIf="cajanombre.valid == false && cajanombre.touched">
+            El nombre es obligatorio
+        </span><br/><br>
          <label>Apellidos: </label>
          <input type="text" name="cajaapellidos"
          #cajaapellidos="ngModel" [(ngModel)]="user.apellidos"/><br/><br>
          <label>Edad: </label>
          <input type="number" name="cajaedad"
          #cajaedad="ngModel" [(ngModel)]="user.edad"/><br><br>
-         <button>
+         <button [disabled]="!userForm.valid">
             Enviar datos
          </button>
     </form>

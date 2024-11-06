@@ -1,0 +1,24 @@
+<div>
+    <h1>Tabla de Multiplicar</h1>
+    <form (ngSubmit)="cargarTabla()" #form="ngForm">
+        <label>Inserte numero: </label>
+        <input type="number" name="cajanumero" #cajanumero><br>
+        <button>Cargar Tabla Multiplicar</button>
+    </form>
+    <div id="div" *ngIf="operacion.length">
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Operacion</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let valor of operacion;let i =index">
+                    <td>{{valor}}</td>
+                    <td>{{resultado[i]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
