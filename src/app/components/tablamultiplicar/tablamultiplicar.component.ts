@@ -23,7 +23,7 @@ export class TablamultiplicarComponent {
     this.resultado = []
   }
   
-  cargarTabla(){
+  cargarTabla(): void{
     this.operacion = []
     this.resultado = []
     // this.tabla = []
